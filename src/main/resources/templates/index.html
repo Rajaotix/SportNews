@@ -377,7 +377,7 @@
 									<a href="#"><img class="media-object" src="/assets/img/img-list.jpg" th:alt="${news.getImgdescri()}"></a>
 								</div><!--media-left-->
 								<div class="media-body">
-									<h4 class="media-heading"><a th:href="@{'/'+${news.getGenre().getNom().toLowerCase()}+'-'+${news.getGenre()}+'-'+${news.getId()}}" th:text="${news.getTitre()}"></a></h4>
+									<h4 class="media-heading"><a th:href="@{'/'+${news.getGenre().getNom().toLowerCase()}+'-'+${news.getGenre().getId()}+'-'+${news.getId()}}" th:text="${news.getTitre()}"></a></h4>
 									<span class="rating">
 										<i class="fa fa-star"></i>
 										<i class="fa fa-star"></i>
