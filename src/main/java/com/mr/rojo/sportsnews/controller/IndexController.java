@@ -5,6 +5,7 @@ import com.mr.rojo.sportsnews.modele.Client;
 import com.mr.rojo.sportsnews.modele.Genre;
 import com.mr.rojo.sportsnews.service.ActualitesService;
 import com.mr.rojo.sportsnews.service.GenreService;
+import com.mr.rojo.sportsnews.service.ToutService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +25,8 @@ public class IndexController {
     ActualitesService actualitesService;
     @Autowired
     GenreService genreService;
+    @Autowired
+    ToutService toutService;
     @GetMapping("/")
     public String  home(HttpSession session, Model model)
     {
@@ -31,6 +34,7 @@ public class IndexController {
         List<Genre> genre=genreService.getList();
         List<Actualites[]> valiny=new ArrayList<Actualites[]>();
         Random random=new Random();
+        List<Actualites> news=toutService.getActuNew();
         if(session.getAttribute("Client")==null)
         {
             for(int i=0;i<3;i++)
@@ -46,6 +50,7 @@ public class IndexController {
             model.addAttribute("Liste",valiny);
             System.out.println("valiny "+valiny.size());
         }
+        model.addAttribute("News",news);
         model.addAttribute("Genre",genre);
         return  "index";
 
