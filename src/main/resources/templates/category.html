@@ -156,7 +156,7 @@
 									</div><!--item_img--> 
 									<div class="item_title_date">
 										<div class="news_item_title">
-											<h1><a href="single.html" th:text="${Liste[0].getTitre()}"></a></h1>
+											<h1><a th:href="@{'/'+${Liste[0].getGenre().getNom()}+'-'+${Liste[0].getGenre().getId()}+'-'+${Liste[0].getId()}+'.html'}" th:text="${Liste[0].getTitre()}"></a></h1>
 										</div><!--news_item_title-->
 										<div class="item_meta"><a href="#" th:text="${Liste[0].getDate()}">,</a> by:<a href="#" th:text="${Liste[0].getClient().getNom()}"></a></div>
 									</div><!--item_title_date-->
@@ -178,7 +178,7 @@
 									</div> <!--item_img-->
 									<div class="item_title_date">
 										<div class="news_item_title">
-											<h2><a th:href="@{'/'+${ls.getGenre().getNom()}+'-'+${ls.getGenre().getId()}+'-'+${ls.getId()}}" th:text="${ls.getTitre()}"></a></h2>
+											<h2><a th:href="@{'/'+${ls.getGenre().getNom()}+'-'+${ls.getGenre().getId()}+'-'+${ls.getId()}+'.html'}" th:text="${ls.getTitre()}"></a></h2>
 										</div>
 										<div class="item_meta"><a href="#" th:text="${ls.getDate()}">,</a> by:<a href="#" th:text="${ls.getClient().getNom()}"></a></div>
 									</div><!--item_title_date-->
@@ -372,7 +372,8 @@
 					</div><!--media-->
 				</div><!--most_comment-->
 			</div>
-		</div>	   	
+		</div>
+	</div>
 </section><!--feature_category_section-->
 
 	<!-- Footer Section -->
