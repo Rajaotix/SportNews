@@ -14,6 +14,6 @@
     </rule>
     <rule>
         <from>^/([a-z]+)-([0-9]+)-([0-9]+)\.html$</from>
-        <to>/single?idgenre=$1&amp;idactu=$2</to>
+        <to>/single?idgenre=$2&amp;idactu=$3</to>
     </rule>
 </urlrewrite>
