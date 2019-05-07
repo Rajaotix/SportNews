@@ -50,8 +50,8 @@ public class IndexController {
         return  "index";
 
     }
-    @GetMapping("/test")
-    public String test(@RequestParam("id") String id)
+    @GetMapping("/single")
+    public String test(@RequestParam("idactu") String id)
     {
         System.out.println(id);
         return "single";

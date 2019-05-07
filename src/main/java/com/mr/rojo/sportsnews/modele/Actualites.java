@@ -35,6 +35,17 @@ public class Actualites {
     @Column(name="CONTENUE")
     private String contenue;
 
+    @Column(name="IMGDESCRI")
+    private String imgdescri;
+
+    public String getImgdescri() {
+        return imgdescri;
+    }
+
+    public void setImgdescri(String imgdescri) {
+        this.imgdescri = imgdescri;
+    }
+
     public String getContenue() {
         return contenue;
     }

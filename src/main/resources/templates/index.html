@@ -102,7 +102,7 @@
 				<ul class="nav navbar-nav">
 					<li class="hidden"><a href="#page-top"></a></li>
 
-					<li th:each="genre:${Genre}"><a class="page-scroll" href="category.html" th:text="${genre.getNom()}"></a></li>
+					<li th:each="genre:${Genre}"><a class="page-scroll" th:href="@{'/category/'+${genre.getNom().toLowerCase()}+'-'+${genre.getId()}+'.html'}" th:text="${genre.getNom()}"></a></li>
 
 
 					<li class="dropdown">
@@ -246,7 +246,7 @@
 		   	<div class="col-md-9">
 				<div  th:each="liste:${Liste}">
 		   		<div class="category_layout" >
-			   		<div class="item_caregory red"><h2><a href="category.html" th:text="${liste[0].getGenre().getNom()}"></a></h2></div>
+			   		<div class="item_caregory red"><h2><a th:href="@{'/category/'+${liste[0].getGenre().getNom().toLowerCase()}+'-'+${liste[0].getGenre().getId()}+'.html'}"  th:text="${liste[0].getGenre().getNom()}"></a></h2></div>
 						<div class="row">
 				   			<div class="col-md-7">
 								<div class="item feature_news_item">
@@ -256,7 +256,7 @@
 										</div><!--item_img--> 
 										<div class="item_title_date">
 											<div class="news_item_title">
-												<h2><a href="#" th:text="${liste[0].getTitre()}"></a></h2>
+												<h2><a th:href="@{'/'+${liste[0].getGenre().getNom().toLowerCase()}+'-'+${liste[0].getId()}}" th:text="${liste[0].getTitre()}"></a></h2>
 											</div><!--news_item_title-->
                                             <div class="item_meta"><a href="#"th:text="${liste[0].getDate().toString()}">,</a> by:<a href="#" th:text="${liste[0].getClient().getNom()}"></a></div>
 										</div><!--item_title_date-->
@@ -274,7 +274,7 @@
 											<a href="#"><img class="media-object" src="/assets/img/img-list.jpg" alt="Generic placeholder image"></a>
 										</div><!--media-left-->
 										<div class="media-body">
-											<h3 class="media-heading"><a href="#" th:text="${ls.getTitre()}">
+											<h3 class="media-heading"><a th:href="@{'/'+${ls.getGenre().getNom().toLowerCase()}+'-'+${ls.getId()}}" th:text="${ls.getTitre()}">
 											</a></h3>
 
 											<p th:text="${ls.getDescription()}"></p>
