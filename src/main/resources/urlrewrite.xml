@@ -13,7 +13,7 @@
         <to>/categorie?idgenre=$2</to>
     </rule>
     <rule>
-        <from>^/([a-z]+)-([0-9]+)\.html$</from>
-        <to>/single?idactu=$2</to>
+        <from>^/([a-z]+)-([0-9]+)-([0-9]+)\.html$</from>
+        <to>/single?idgenre=$1&amp;idactu=$2</to>
     </rule>
 </urlrewrite>

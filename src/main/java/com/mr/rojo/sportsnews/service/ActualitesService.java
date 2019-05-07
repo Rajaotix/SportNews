@@ -53,7 +53,12 @@ public class ActualitesService implements  ActualitesServiceInterface{
         }
         return valiny;
     }
-
+    public Actualites getActuById(int id)
+    {
+        Actualites actualites=new Actualites();
+        actualites=actualitesRepository.findById(id).get();
+        return actualites;
+    }
     public Actualites[] getActuByGenreLimit(int limite,int genre,List<Actualites> liste)
     {
         List<Actualites> lsa=getActuByGenre(genre,liste);

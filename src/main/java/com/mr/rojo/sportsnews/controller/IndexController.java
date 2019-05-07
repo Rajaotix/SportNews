@@ -56,9 +56,9 @@ public class IndexController {
 
     }
     @GetMapping("/single")
-    public String test(@RequestParam("idactu") String id)
+    public String test(@RequestParam("idgenre") int idgenre,@RequestParam("idactu") int idpublication)
     {
-        System.out.println(id);
+        System.out.println(idpublication);
         return "single";
     }
     @GetMapping("/categorie")
