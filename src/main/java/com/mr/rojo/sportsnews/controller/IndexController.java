@@ -56,9 +56,17 @@ public class IndexController {
 
     }
     @GetMapping("/single")
-    public String test(@RequestParam("idgenre") int idgenre,@RequestParam("idactu") int idpublication)
+    public String test(@RequestParam("idgenre") int idgenre,@RequestParam("idactu") int idpublication,Model model)
     {
-        System.out.println(idpublication);
+        List<Genre> genre=genreService.getList();
+        model.addAttribute("Genre",genre);
+        List<Actualites> news=toutService.getActuNew();
+        model.addAttribute("News",news);
+        Actualites simple=actualitesService.getActuById(idpublication);
+        model.addAttribute("Simple",simple);
+        Actualites[] actualitesgenre=actualitesService.getActuByGenreLimit(3,idgenre,null);
+        model.addAttribute("RelatedNews",actualitesgenre);
+
         return "single";
     }
     @GetMapping("/categorie")
