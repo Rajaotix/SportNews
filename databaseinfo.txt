@@ -1,0 +1,16 @@
+Username: L1ae1OhD41
+
+Password: 7HaPTRi93Z
+
+Database Name: L1ae1OhD41
+
+Server: remotemysql.com
+
+Port: 3306
+
+
+spring.datasource.url=jdbc:mysql://localhost:3306/Sportnew?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
+spring.datasource.username=root
+spring.datasource.password=root
+
+https://remotemysql.com/signup.php
