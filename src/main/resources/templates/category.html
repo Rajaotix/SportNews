@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -156,12 +156,12 @@
 									</div><!--item_img--> 
 									<div class="item_title_date">
 										<div class="news_item_title">
-											<h1><a href="single.html">Leo Messi is boss of the bosses in the football world omnis iste natus error .</a></h1>
+											<h1><a href="single.html" th:text="${Liste[0].getTitre()}"></a></h1>
 										</div><!--news_item_title-->
-										<div class="item_meta"><a href="#">20Aug- 2015,</a> by:<a href="#">Jhonson</a></div>
+										<div class="item_meta"><a href="#" th:text="${Liste[0].getDate()}">,</a> by:<a href="#" th:text="${Liste[0].getClient().getNom()}"></a></div>
 									</div><!--item_title_date-->
 								</div><!--item_wrapper-->
-							    <div class="item_content">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim aut Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut...
+							    <div class="item_content" th:text="${Liste[0].getContenue()}">
 							    </div><!--item_content-->
 
 							</div><!--item-->               			 
@@ -169,134 +169,26 @@
 					</div><!--col-md-6-->
 				</div>		
 				<div class="row">								 
-					<div class="col-md-6">
+					<div class="col-md-6" th:each="ls:${Liste}">
 						<div class="feature_news_item">
 							<div class="item">
 								<div class="item_wrapper">
 									<div class="item_img">
-										<img class="img-responsive" src="/assets/img/img-category.jpg" alt="Chania">
+										<img class="img-responsive" src="/assets/img/img-category.jpg" th:alt="${ls.getImgdescri()}">
 									</div> <!--item_img-->
 									<div class="item_title_date">
 										<div class="news_item_title">
-											<h2><a href="single.html">Barcelona FC fix the special technique for goal machine</a></h2>
+											<h2><a th:href="@{'/'+${ls.getGenre().getNom()}+'-'+${ls.getGenre().getId()}+'-'+${ls.getId()}}" th:text="${ls.getTitre()}"></a></h2>
 										</div>
-										<div class="item_meta"><a href="#">20Aug- 2015,</a> by:<a href="#">Jhonson</a></div>
+										<div class="item_meta"><a href="#" th:text="${ls.getDate()}">,</a> by:<a href="#" th:text="${ls.getClient().getNom()}"></a></div>
 									</div><!--item_title_date-->
 								</div> <!--item_wrapper-->
-								<div class="item_content">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
+								<div class="item_content" th:text="${ls.getDescription()}">
 								</div>
 
 							</div><!--item-->
 						</div><!--feature_news_item-->
 					</div><!--col-md-6-->
-						
-					<div class="col-md-6">
-						<div class="feature_news_item">
-							<div class="item">
-								<div class="item_wrapper">
-									<div class="item_img">
-										<img class="img-responsive" src="/assets/img/img-category2.jpg" alt="Chania">
-									</div> <!--item_img-->
-									<div class="item_title_date">
-										<div class="news_item_title">
-											<h2><a href="single.html">England women fooball team ahed 1:0 Goal</a></h2>
-										</div>
-										<div class="item_meta"><a href="#">20Aug- 2015,</a> by:<a href="#">Jhonson</a></div>
-									</div><!--item_title_date-->
-								</div> <!--item_wrapper-->
-								<div class="item_content">Sed ut perspiciatis unde omnis iste natus error sit
-								</div>
-
-							</div><!--item-->
-						</div><!--feature_news_item-->
-					</div><!--col-md-6-->
-					
-					<div class="col-md-6">
-						<div class="feature_news_item">
-							<div class="item">
-								<div class="item_wrapper">
-									<div class="item_img">
-										<img class="img-responsive" src="/assets/img/img-category3.jpg" alt="Chania">
-									</div> <!--item_img-->
-									<div class="item_title_date">
-										<div class="news_item_title">
-											<h2><a href="single.html">Neymar 4th goal in europian champion league</a></h2>
-										</div>
-										<div class="item_meta"><a href="#">20Aug- 2015,</a> by:<a href="#">Jhonson</a></div>
-									</div><!--item_title_date-->
-								</div> <!--item_wrapper-->
-								<div class="item_content">Sed ut perspiciatis unde omnis iste natus error sit
-								</div>
-
-							</div><!--item-->
-						</div><!--feature_news_item-->
-					</div><!--col-md-6-->
-					
-					<div class="col-md-6">
-						<div class="feature_news_item">
-							<div class="item">
-								<div class="item_wrapper">
-									<div class="item_img">
-										<img class="img-responsive" src="/assets/img/img-category4.jpg" alt="Chania">
-									</div> <!--item_img-->
-									<div class="item_title_date">
-										<div class="news_item_title">
-											<h2><a href="single.html">Juventus players raise the voice for victory</a></h2>
-										</div>
-										<div class="item_meta"><a href="#">20Aug- 2015,</a> by:<a href="#">Jhonson</a></div>
-									</div><!--item_title_date-->
-								</div> <!--item_wrapper-->
-								<div class="item_content">Sed ut perspiciatis unde omnis iste natus error sit
-								</div>
-
-							</div><!--item-->
-						</div><!--feature_news_item-->
-					</div><!--col-md-6-->
-					
-					<div class="col-md-6">
-						<div class="feature_news_item">
-							<div class="item">
-								<div class="item_wrapper">
-									<div class="item_img">
-										<img class="img-responsive" src="/assets/img/img-category5.jpg" alt="Chania">
-									</div> <!--item_img-->
-									<div class="item_title_date">
-										<div class="news_item_title">
-											<h2><a href="single.html">Rooney happy for 2 goals after long time</a></h2>
-										</div>
-										<div class="item_meta"><a href="#">20Aug- 2015,</a> by:<a href="#">Jhonson</a></div>
-									</div><!--item_title_date-->
-								</div> <!--item_wrapper-->
-								<div class="item_content">Sed ut perspiciatis unde omnis iste natus error sit
-								</div>
-
-							</div><!--item-->
-						</div><!--feature_news_item-->
-					</div><!--col-md-6-->
-					
-					<div class="col-md-6">
-						<div class="feature_news_item">
-							<div class="item">
-								<div class="item_wrapper">
-									<div class="item_img">
-										<img class="img-responsive" src="/assets/img/img-category6.jpg" alt="Chania">
-									</div> <!--item_img-->
-									<div class="item_title_date">
-										<div class="news_item_title">
-											<h2><a href="single.html">Alexis Sanchez & Arsenal jointly champion the leage</a></h2>
-										</div>
-										<div class="item_meta"><a href="#">20Aug- 2015,</a> by:<a href="#">Jhonson</a></div>
-									</div><!--item_title_date-->
-								</div> <!--item_wrapper-->
-								<div class="item_content">Sed ut perspiciatis unde omnis iste natus error sit voluptatem.
-								</div>
-
-							</div><!--item-->
-						</div><!--feature_news_item-->
-					</div><!--col-md-6-->
-					
-
-												 
 				</div><!--row-->	
 		   	</div><!--col-md-9-->
 

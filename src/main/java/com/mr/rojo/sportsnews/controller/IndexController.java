@@ -66,6 +66,8 @@ public class IndexController {
     {
         List<Genre> genre=genreService.getList();
         model.addAttribute("Genre",genre);
+        Actualites[] actualites=actualitesService.getActuByGenreLimit(5,idgenre,null);
+        model.addAttribute("Liste",actualites);
         return "category";
     }
     @GetMapping("/ws")
