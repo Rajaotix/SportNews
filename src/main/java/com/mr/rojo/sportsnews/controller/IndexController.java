@@ -55,6 +55,11 @@ public class IndexController {
         return  "index";
 
     }
+    @GetMapping("/Bo")
+    public String backoffice()
+    {
+        return "BO/index";
+    }
     @GetMapping("/single")
     public String test(@RequestParam("idgenre") int idgenre,@RequestParam("idactu") int idpublication,Model model)
     {
